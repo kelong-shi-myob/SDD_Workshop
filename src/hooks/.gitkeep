@@ -1,0 +1,7 @@
+# Hooks directory for custom React hooks
+# - useLocalStorage: localStorage management
+# - useExpenses: Expense CRUD operations
+# - useTheme: Theme management
+# - useLanguage: Language switching
+# - useStorageSync: Cross-tab sync
+

@@ -1,0 +1,69 @@
+{
+  "app": {
+    "title": "Expense Tracker",
+    "description": "Track your expenses easily"
+  },
+  "common": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "noData": "No data available"
+  },
+  "expense": {
+    "title": "Expense",
+    "amount": "Amount",
+    "date": "Date",
+    "category": "Category",
+    "description": "Description",
+    "addExpense": "Add Expense",
+    "editExpense": "Edit Expense",
+    "deleteExpense": "Delete Expense",
+    "recentExpenses": "Recent Expenses",
+    "totalExpenses": "Total Expenses",
+    "noExpenses": "No expenses yet"
+  },
+  "category": {
+    "food": "Food",
+    "transport": "Transport",
+    "entertainment": "Entertainment",
+    "utilities": "Utilities",
+    "healthcare": "Healthcare",
+    "shopping": "Shopping",
+    "other": "Other",
+    "summary": "Category Summary"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to Expense Tracker",
+    "recent": "Recent Expenses",
+    "categoryBreakdown": "Category Breakdown"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidAmount": "Please enter a valid amount",
+    "invalidDate": "Please enter a valid date",
+    "amountPositive": "Amount must be greater than zero"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "toggle": "Toggle Theme"
+  },
+  "language": {
+    "english": "English",
+    "chinese": "中文",
+    "toggle": "Toggle Language"
+  },
+  "currency": {
+    "symbol": "$"
+  }
+}
+

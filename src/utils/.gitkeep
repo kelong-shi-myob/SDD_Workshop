@@ -1,0 +1,7 @@
+# Utils directory for utility functions
+# - storage.ts: localStorage adapter
+# - date.ts: Date formatting utilities
+# - currency.ts: Currency formatting utilities
+# - validation.ts: Validation helpers
+# - csv.ts: CSV export functionality
+

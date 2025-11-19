@@ -1,0 +1,5 @@
+# Context directory for React contexts
+# - ThemeContext: Dark/light mode management
+# - LanguageContext: i18n language switching
+# - ExpenseContext: Expense data management
+

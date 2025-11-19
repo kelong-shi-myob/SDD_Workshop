@@ -1,0 +1,5 @@
+# Types directory for TypeScript type definitions
+# - expense.types.ts: Expense-related types
+# - preferences.types.ts: User preference types
+# - storage.types.ts: Storage-related types
+

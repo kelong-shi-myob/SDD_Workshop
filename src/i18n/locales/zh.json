@@ -1,0 +1,69 @@
+{
+  "app": {
+    "title": "支出追踪器",
+    "description": "轻松追踪您的支出"
+  },
+  "common": {
+    "add": "添加",
+    "edit": "编辑",
+    "delete": "删除",
+    "cancel": "取消",
+    "save": "保存",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "search": "搜索",
+    "filter": "筛选",
+    "export": "导出",
+    "noData": "暂无数据"
+  },
+  "expense": {
+    "title": "支出",
+    "amount": "金额",
+    "date": "日期",
+    "category": "类别",
+    "description": "描述",
+    "addExpense": "添加支出",
+    "editExpense": "编辑支出",
+    "deleteExpense": "删除支出",
+    "recentExpenses": "最近支出",
+    "totalExpenses": "总支出",
+    "noExpenses": "暂无支出记录"
+  },
+  "category": {
+    "food": "餐饮",
+    "transport": "交通",
+    "entertainment": "娱乐",
+    "utilities": "水电费",
+    "healthcare": "医疗",
+    "shopping": "购物",
+    "other": "其他",
+    "summary": "类别汇总"
+  },
+  "dashboard": {
+    "title": "仪表板",
+    "welcome": "欢迎使用支出追踪器",
+    "recent": "最近支出",
+    "categoryBreakdown": "类别明细"
+  },
+  "validation": {
+    "required": "此字段必填",
+    "invalidAmount": "请输入有效金额",
+    "invalidDate": "请输入有效日期",
+    "amountPositive": "金额必须大于零"
+  },
+  "theme": {
+    "light": "浅色",
+    "dark": "深色",
+    "toggle": "切换主题"
+  },
+  "language": {
+    "english": "English",
+    "chinese": "中文",
+    "toggle": "切换语言"
+  },
+  "currency": {
+    "symbol": "¥"
+  }
+}
+

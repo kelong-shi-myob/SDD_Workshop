@@ -1,0 +1,10 @@
+# Components directory structure:
+# - ui/ (shadcn components)
+# - ExpenseForm/ (Add/Edit expense form)
+# - ExpenseList/ (List of expenses)
+# - ExpenseItem/ (Single expense item)
+# - Dashboard/ (Main dashboard)
+# - CategorySummary/ (Category breakdown)
+# - ThemeToggle/ (Theme switcher)
+# - LanguageToggle/ (Language switcher)
+

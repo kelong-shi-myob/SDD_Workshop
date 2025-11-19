@@ -25,16 +25,16 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Initialize Vite React TypeScript project with `npm create vite@latest . -- --template react-ts`
-- [ ] T002 Install core dependencies: `npm install react-router-dom react-hook-form zod @hookform/resolvers/zod react-i18next i18next uuid`
-- [ ] T003 Install UI dependencies: `npx shadcn-ui@latest init` (select Default style, Slate color, CSS variables: Yes)
-- [ ] T004 [P] Install dev dependencies: `npm install -D @types/uuid vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom happy-dom`
-- [ ] T005 [P] Configure TypeScript strict mode in `tsconfig.json` (strict: true, noUncheckedIndexedAccess: true)
-- [ ] T006 [P] Configure Tailwind for dark mode in `tailwind.config.ts` (darkMode: 'class')
-- [ ] T007 [P] Configure Vitest in `vite.config.ts` (test environment: jsdom, globals: true, setupFiles)
-- [ ] T008 [P] Setup ESLint + Prettier configurations
-- [ ] T009 Add shadcn components: `npx shadcn-ui@latest add button card form input label select dialog`
-- [ ] T010 Create directory structure per plan.md: src/{components,context,hooks,utils,i18n,types}
+- [x] T001 Initialize Vite React TypeScript project with `npm create vite@latest . -- --template react-ts`
+- [x] T002 Install core dependencies: `npm install react-router-dom react-hook-form zod @hookform/resolvers/zod react-i18next i18next uuid`
+- [x] T003 Install UI dependencies: `npx shadcn-ui@latest init` (select Default style, Slate color, CSS variables: Yes)
+- [x] T004 [P] Install dev dependencies: `npm install -D @types/uuid vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom happy-dom`
+- [x] T005 [P] Configure TypeScript strict mode in `tsconfig.json` (strict: true, noUncheckedIndexedAccess: true)
+- [x] T006 [P] Configure Tailwind for dark mode in `tailwind.config.ts` (darkMode: 'class')
+- [x] T007 [P] Configure Vitest in `vite.config.ts` (test environment: jsdom, globals: true, setupFiles)
+- [x] T008 [P] Setup ESLint + Prettier configurations
+- [x] T009 Add shadcn components: `npx shadcn-ui@latest add button card form input label select dialog`
+- [x] T010 Create directory structure per plan.md: src/{components,context,hooks,utils,i18n,types}
 
 ---
 
@@ -44,24 +44,24 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T011 Create TypeScript types in `src/types/expense.ts` (ExpenseCategory enum, Expense interface)
-- [ ] T012 [P] Create TypeScript types in `src/types/preferences.ts` (Theme, Language, UserPreferences)
-- [ ] T013 [P] Create Zod validation schema in `src/utils/validation.ts` (expenseSchema with all field validations)
-- [ ] T014 Write unit tests for localStorage adapter in `src/utils/__tests__/localStorage.test.ts`
-- [ ] T015 Implement localStorage adapter in `src/utils/localStorage.ts` (getExpenses, setExpenses, getPreferences, setPreferences, with QuotaExceededError handling)
-- [ ] T016 [P] Write unit tests for validation in `src/utils/__tests__/validation.test.ts`
-- [ ] T017 [P] Write unit tests for formatting in `src/utils/__tests__/formatting.test.ts`
-- [ ] T018 Implement formatting utilities in `src/utils/formatting.ts` (formatCurrency with locale, formatDate)
-- [ ] T019 Create custom hook tests in `src/hooks/__tests__/useLocalStorage.test.ts`
-- [ ] T020 Implement useLocalStorage hook in `src/hooks/useLocalStorage.ts` (generic type-safe localStorage hook)
-- [ ] T021 [P] Create English translations in `src/i18n/en.json` (all translation keys from data-model.md)
-- [ ] T022 [P] Create Chinese translations in `src/i18n/zh.json` (all translation keys translated)
-- [ ] T023 Configure i18next in `src/i18n/translations.ts` (load translations, fallback to 'en')
-- [ ] T024 Create ThemeContext in `src/context/ThemeContext.tsx` (provider with toggleTheme, persists to localStorage)
-- [ ] T025 [P] Create LanguageContext in `src/context/LanguageContext.tsx` (provider with setLanguage, integrates with i18next)
-- [ ] T026 Create AppLayout component in `src/components/Layout/AppLayout.tsx` (header with theme toggle and language selector)
-- [ ] T027 [P] Create ThemeToggle component in `src/components/Layout/ThemeToggle.tsx` (sun/moon icon button with ARIA label)
-- [ ] T028 [P] Create LanguageSelector component in `src/components/Layout/LanguageSelector.tsx` (dropdown with English/中文 options)
+- [x] T011 Create TypeScript types in `src/types/expense.ts` (ExpenseCategory enum, Expense interface)
+- [x] T012 [P] Create TypeScript types in `src/types/preferences.ts` (Theme, Language, UserPreferences)
+- [x] T013 [P] Create Zod validation schema in `src/utils/validation.ts` (expenseSchema with all field validations)
+- [x] T014 Write unit tests for localStorage adapter in `src/utils/__tests__/localStorage.test.ts`
+- [x] T015 Implement localStorage adapter in `src/utils/localStorage.ts` (getExpenses, setExpenses, getPreferences, setPreferences, with QuotaExceededError handling)
+- [x] T016 [P] Write unit tests for validation in `src/utils/__tests__/validation.test.ts`
+- [x] T017 [P] Write unit tests for formatting in `src/utils/__tests__/formatting.test.ts`
+- [x] T018 Implement formatting utilities in `src/utils/formatting.ts` (formatCurrency with locale, formatDate)
+- [x] T019 Create custom hook tests in `src/hooks/__tests__/useLocalStorage.test.ts`
+- [x] T020 Implement useLocalStorage hook in `src/hooks/useLocalStorage.ts` (generic type-safe localStorage hook)
+- [x] T021 [P] Create English translations in `src/i18n/en.json` (all translation keys from data-model.md)
+- [x] T022 [P] Create Chinese translations in `src/i18n/zh.json` (all translation keys translated)
+- [x] T023 Configure i18next in `src/i18n/translations.ts` (load translations, fallback to 'en')
+- [x] T024 Create ThemeContext in `src/context/ThemeContext.tsx` (provider with toggleTheme, persists to localStorage)
+- [x] T025 [P] Create LanguageContext in `src/context/LanguageContext.tsx` (provider with setLanguage, integrates with i18next)
+- [x] T026 Create AppLayout component in `src/components/Layout/AppLayout.tsx` (header with theme toggle and language selector)
+- [x] T027 [P] Create ThemeToggle component in `src/components/Layout/ThemeToggle.tsx` (sun/moon icon button with ARIA label)
+- [x] T028 [P] Create LanguageSelector component in `src/components/Layout/LanguageSelector.tsx` (dropdown with English/中文 options)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
