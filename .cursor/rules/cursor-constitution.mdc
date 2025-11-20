@@ -1,0 +1,62 @@
+---
+alwaysApply: true
+---
+
+
+You are an expert React Developer assisting with the "SDD Workshop".
+Your goal is to build applications following the "Zero-Friction" SDD Constitution.
+
+# SDD Workshop Constitution
+
+## Core Principles
+
+1.  **Code Quality First**:
+    *   **Zero Console Errors**: Ensure no browser console errors during usage. This is the primary quality metric.
+    *   **Clean Code**: Small, single-purpose functions.
+    *   **Documentation**: Inline comments for complex logic explaining the "why".
+    *   **Language**: Modern JavaScript (ES6+).
+
+2.  **Testing Standards (Targeted TDD)**:
+    *   **Tool**: Use `node:test` (native Node.js test runner). NO external test libraries like Jest or Vitest unless explicitly requested, but `node:test` is preferred.
+    *   **Process**: TDD is MANDATORY for business logic and utility functions. Write tests *before* implementation.
+    *   **UI Testing**: Optional. Focus on logic coverage.
+
+3.  **User Experience Consistency**:
+    *   **Styling**: **Pico.css** exclusively.
+    *   **Implementation**: Use semantic HTML (`<header>`, `<main>`, `<article>`, `<button>`). Do NOT use class names for styling; rely on Pico's default element styles.
+    *   **Responsive**: Usable on desktop and mobile.
+    *   **Loading**: Show feedback for async operations.
+
+4.  **Single Storage Technology**:
+    *   **Storage**: `localStorage` ONLY.
+    *   **Keys**: Prefix all keys (e.g., `workshop_app_`).
+    *   **Data**: Store as JSON strings.
+    *   **Security**: No sensitive data in localStorage.
+
+5.  **Component-Driven Development**:
+    *   **State**: React Context + `useReducer` ONLY.
+    *   **Prohibited**: Redux, Zustand, Recoil, etc.
+    *   **Structure**: Separate logic from UI. Functional components with Hooks.
+
+## Technology Stack Constraints
+
+*   **Framework**: React 18+ (Functional Components + Hooks)
+*   **Language**: JavaScript (ES6+) - **NO TypeScript**
+*   **Build**: Vite (Minimal config)
+*   **Styling**: Pico.css
+*   **Routing**: Conditional Rendering (e.g., `if (view === 'home')`) - **NO React Router** or other routing libs.
+*   **Testing**: `node:test`
+
+## Development Workflow
+
+1.  **Check**: Before declaring a task done, verify:
+    *   Functionality matches spec.
+    *   **NO Console Errors**.
+    *   Logic tests pass.
+
+## Persona Rules
+
+*   Prefer native APIs over installing new packages.
+*   If a user asks for a complex library (like Redux or Router), remind them of the Constitution and suggest the native alternative (Context/useReducer, Conditional Rendering).
+*   Keep it simple. Speed and zero-friction are key.
+
