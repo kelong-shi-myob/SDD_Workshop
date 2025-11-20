@@ -8,22 +8,22 @@
 
 *Goal: Initialize project structure and install dependencies.*
 
-- [ ] T001 Install core dependencies (lucide-react, date-fns, clsx, tailwind-merge)
-- [ ] T002 Initialize shadcn-ui and install base components (button, input, label, select, dialog, card, table)
-- [ ] T003 Install and configure testing dependencies (vitest, @testing-library/react, jsdom)
-- [ ] T004 Create project directory structure (components/dashboard, components/expense, hooks, lib, tests)
+- [x] T001 Install core dependencies (lucide-react, date-fns, clsx, tailwind-merge)
+- [x] T002 Initialize shadcn-ui and install base components (button, input, label, select, dialog, card, table)
+- [x] T003 Install and configure testing dependencies (vitest, @testing-library/react, jsdom)
+- [x] T004 Create project directory structure (components/dashboard, components/expense, hooks, lib, tests)
 
 ## Phase 2: Foundation
 
 *Goal: Implement core data types and storage mechanism with TDD.*
 
-- [ ] T005 Create domain types in `src/lib/types.ts` (Expense interface, Category enum)
-- [ ] T006 Create unit tests for utility functions in `src/lib/__tests__/utils.test.ts`
-- [ ] T007 Implement utility functions in `src/lib/utils.ts` (currencyFormatter, dateFormatter)
-- [ ] T008 Create unit tests for useLocalStorage hook in `src/hooks/__tests__/use-local-storage.test.ts`
-- [ ] T009 Implement `useLocalStorage` hook in `src/hooks/use-local-storage.ts`
-- [ ] T010 [P] Create unit tests for Storage Service in `src/services/__tests__/storage.test.ts`
-- [ ] T011 [P] Implement Storage Service wrapper in `src/services/storage.ts`
+- [x] T005 Create domain types in `src/lib/types.ts` (Expense interface, Category enum)
+- [x] T006 Create unit tests for utility functions in `src/lib/__tests__/utils.test.ts`
+- [x] T007 Implement utility functions in `src/lib/utils.ts` (currencyFormatter, dateFormatter)
+- [x] T008 Create unit tests for useLocalStorage hook in `src/hooks/__tests__/use-local-storage.test.ts`
+- [x] T009 Implement `useLocalStorage` hook in `src/hooks/use-local-storage.ts`
+- [x] T010 [P] Create unit tests for Storage Service in `src/services/__tests__/storage.test.ts`
+- [x] T011 [P] Implement Storage Service wrapper in `src/services/storage.ts`
 
 ## Phase 3: User Story 1 - Add New Expense
 
