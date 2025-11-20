@@ -30,19 +30,19 @@
 *Goal: Allow users to record expenses.*
 *Priority: P1*
 
-- [ ] T012 [US1] Create component tests for AddExpenseForm in `src/components/expense/__tests__/add-expense-form.test.tsx`
-- [ ] T013 [US1] Create AddExpenseForm component in `src/components/expense/add-expense-form.tsx` (UI skeleton)
-- [ ] T014 [US1] Implement validation and submission logic in `src/components/expense/add-expense-form.tsx` to pass tests
-- [ ] T015 [US1] Create ExpenseDialog wrapper in `src/components/expense/expense-dialog.tsx`
-- [ ] T016 [US1] Add "Add Expense" trigger button to `src/App.tsx` layout
+- [x] T012 [US1] Create component tests for AddExpenseForm in `src/components/expense/__tests__/add-expense-form.test.tsx`
+- [x] T013 [US1] Create AddExpenseForm component in `src/components/expense/add-expense-form.tsx` (UI skeleton)
+- [x] T014 [US1] Implement validation and submission logic in `src/components/expense/add-expense-form.tsx` to pass tests
+- [x] T015 [US1] Create ExpenseDialog wrapper in `src/components/expense/expense-dialog.tsx`
+- [x] T016 [US1] Add "Add Expense" trigger button to `src/App.tsx` layout
 
 ## Phase 4: User Story 2 - View Dashboard
 
 *Goal: Display recent activity and category summaries.*
 *Priority: P1*
 
-- [ ] T017 [US2] Create unit tests for analytics logic in `src/lib/__tests__/analytics.test.ts`
-- [ ] T018 [US2] Implement data aggregation logic in `src/lib/analytics.ts`
+- [x] T017 [US2] Create unit tests for analytics logic in `src/lib/__tests__/analytics.test.ts`
+- [x] T018 [US2] Implement data aggregation logic in `src/lib/analytics.ts`
 - [ ] T019 [P] [US2] Create component tests for RecentExpensesList in `src/components/dashboard/__tests__/recent-expenses-list.test.tsx`
 - [ ] T020 [P] [US2] Create RecentExpensesList component in `src/components/dashboard/recent-expenses-list.tsx`
 - [ ] T021 [P] [US2] Create component tests for CategorySummary in `src/components/dashboard/__tests__/category-summary.test.tsx`
