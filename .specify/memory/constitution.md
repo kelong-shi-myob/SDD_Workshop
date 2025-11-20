@@ -111,7 +111,7 @@ Build the application as a composition of reusable, isolated components:
 - **Client Storage**: localStorage (as per Principle IV)
 - **Testing**: 
   - Unit/Component: Vitest + React Testing Library
-  - E2E (if needed): Playwright
+  - E2E (if needed): Don't need
 - **Code Quality**: ESLint + Prettier + TypeScript strict mode
 
 ### Prohibited Without Justification
