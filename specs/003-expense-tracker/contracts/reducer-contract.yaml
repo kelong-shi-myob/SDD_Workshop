@@ -1,0 +1,56 @@
+openapi: 3.0.0
+info:
+  title: Personal Expense Tracker Local API
+  version: 1.0.0
+  description: Internal contract for the Expense Context reducer actions. Not a network API.
+
+paths: {}
+
+components:
+  schemas:
+    Expense:
+      type: object
+      required:
+        - id
+        - amount
+        - date
+        - category
+        - createdAt
+      properties:
+        id:
+          type: string
+          format: uuid
+        amount:
+          type: number
+          minimum: 0.01
+        date:
+          type: string
+          format: date
+        category:
+          type: string
+          enum: [Food, Transport, Entertainment, Utilities, Health, Other]
+        description:
+          type: string
+        createdAt:
+          type: integer
+          format: int64
+
+    ActionAddExpense:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: ['ADD_EXPENSE']
+        payload:
+          $ref: '#/components/schemas/Expense'
+
+    ActionSetView:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: ['SET_VIEW']
+        payload:
+          type: string
+          enum: ['dashboard', 'add-expense']
+
