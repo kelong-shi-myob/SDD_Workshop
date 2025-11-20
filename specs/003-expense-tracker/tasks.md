@@ -22,10 +22,10 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure (src/components, src/context, src/hooks, src/utils, src/views)
-- [ ] T002 Initialize React project with Vite and install Pico.css
-- [ ] T003 [P] Configure `jsconfig.json` for absolute imports (if needed)
-- [ ] T004 [P] Create `src/main.jsx` and `src/index.css` with Pico.css import
+- [x] T001 Create project structure (src/components, src/context, src/hooks, src/utils, src/views)
+- [x] T002 Initialize React project with Vite and install Pico.css
+- [x] T003 [P] Configure `jsconfig.json` for absolute imports (if needed)
+- [x] T004 [P] Create `src/main.jsx` and `src/index.css` with Pico.css import
 
 ---
 
@@ -35,12 +35,12 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T005 Create `src/utils/uuid.js` for ID generation
-- [ ] T006 [P] Create `src/utils/constants.js` with fixed CATEGORIES list
-- [ ] T007 [P] Implement `useLocalStorage` hook in `src/hooks/useLocalStorage.js`
-- [ ] T008 Create `src/context/ExpenseContext.jsx` with initial state and empty reducer
-- [ ] T009 Create `src/App.jsx` shell with basic layout (header/main container)
-- [ ] T010 [P] Create `tests/logic/test_constants.js` to verify category list integrity
+- [x] T005 Create `src/utils/uuid.js` for ID generation
+- [x] T006 [P] Create `src/utils/constants.js` with fixed CATEGORIES list
+- [x] T007 [P] Implement `useLocalStorage` hook in `src/hooks/useLocalStorage.js`
+- [x] T008 Create `src/context/ExpenseContext.jsx` with initial state and empty reducer
+- [x] T009 Create `src/App.jsx` shell with basic layout (header/main container)
+- [x] T010 [P] Create `tests/logic/test_constants.js` to verify category list integrity
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -54,17 +54,17 @@
 
 ### Tests for User Story 1 (Logic/Utils)
 
-- [ ] T011 [P] [US1] Create `tests/logic/test_reducer_add.js` to test ADD_EXPENSE action
-- [ ] T012 [P] [US1] Create `tests/logic/test_validation.js` for expense input validation
+- [x] T011 [P] [US1] Create `tests/logic/test_reducer_add.js` to test ADD_EXPENSE action
+- [x] T012 [P] [US1] Create `tests/logic/test_validation.js` for expense input validation
 
 ### Implementation for User Story 1
 
-- [ ] T013 [US1] Implement `ADD_EXPENSE` action in `src/context/ExpenseContext.jsx` reducer
-- [ ] T014 [US1] Create `src/views/AddExpense.jsx` view component shell
-- [ ] T015 [US1] Implement form state and validation in `src/views/AddExpense.jsx`
-- [ ] T016 [US1] Connect `AddExpense` form to Context `addExpense` function
-- [ ] T017 [US1] Update `src/App.jsx` to conditionally render `AddExpense` view
-- [ ] T018 [P] [US1] Create `src/components/Notification.jsx` for success/error feedback
+- [x] T013 [US1] Implement `ADD_EXPENSE` action in `src/context/ExpenseContext.jsx` reducer
+- [x] T014 [US1] Create `src/views/AddExpense.jsx` view component shell
+- [x] T015 [US1] Implement form state and validation in `src/views/AddExpense.jsx`
+- [x] T016 [US1] Connect `AddExpense` form to Context `addExpense` function
+- [x] T017 [US1] Update `src/App.jsx` to conditionally render `AddExpense` view
+- [x] T018 [P] [US1] Create `src/components/Notification.jsx` for success/error feedback
 
 **Checkpoint**: User can add expenses. Data is saved. Form validates input.
 
@@ -78,15 +78,15 @@
 
 ### Tests for User Story 2 (Logic/Utils)
 
-- [ ] T019 [P] [US2] Create `tests/logic/test_sorting.js` to verify date sorting logic
+- [x] T019 [P] [US2] Create `tests/logic/test_sorting.js` to verify date sorting logic
 
 ### Implementation for User Story 2
 
-- [ ] T020 [US2] Create `src/utils/format.js` for currency and date formatting
-- [ ] T021 [US2] Create `src/components/ExpenseList.jsx` component to display list
-- [ ] T022 [US2] Implement sorting and slicing logic (top 10) in `src/views/Dashboard.jsx`
-- [ ] T023 [US2] Create `src/views/Dashboard.jsx` to compose ExpenseList
-- [ ] T024 [US2] Update `src/App.jsx` to set 'dashboard' as default view and render it
+- [x] T020 [US2] Create `src/utils/format.js` for currency and date formatting
+- [x] T021 [US2] Create `src/components/ExpenseList.jsx` component to display list
+- [x] T022 [US2] Implement sorting and slicing logic (top 10) in `src/views/Dashboard.jsx`
+- [x] T023 [US2] Create `src/views/Dashboard.jsx` to compose ExpenseList
+- [x] T024 [US2] Update `src/App.jsx` to set 'dashboard' as default view and render it
 
 **Checkpoint**: Dashboard works. Recent expenses are visible.
 
@@ -100,14 +100,14 @@
 
 ### Tests for User Story 3 (Logic/Utils)
 
-- [ ] T025 [P] [US3] Create `tests/logic/test_calculations.js` for category summation
+- [x] T025 [P] [US3] Create `tests/logic/test_calculations.js` for category summation
 
 ### Implementation for User Story 3
 
-- [ ] T026 [US3] Implement `calculateCategoryTotals` function in `src/utils/calculations.js`
-- [ ] T027 [US3] Create `src/components/CategorySummary.jsx` component
-- [ ] T028 [US3] Add `CategorySummary` to `src/views/Dashboard.jsx`
-- [ ] T029 [US3] Style summary table/cards using Pico.css grid
+- [x] T026 [US3] Implement `calculateCategoryTotals` function in `src/utils/calculations.js`
+- [x] T027 [US3] Create `src/components/CategorySummary.jsx` component
+- [x] T028 [US3] Add `CategorySummary` to `src/views/Dashboard.jsx`
+- [x] T029 [US3] Style summary table/cards using Pico.css grid
 
 **Checkpoint**: Category totals are visible on the dashboard.
 
@@ -117,11 +117,11 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T030 [P] Add "No expenses yet" empty state to Dashboard
-- [ ] T031 [P] Add navigation buttons (Home/Add) to Header in `src/App.jsx`
-- [ ] T032 Refactor `useExpenses` hook to expose only necessary actions
-- [ ] T033 Verify 100% pass rate for `npm test`
-- [ ] T034 Run quickstart manual validation steps
+- [x] T030 [P] Add "No expenses yet" empty state to Dashboard
+- [x] T031 [P] Add navigation buttons (Home/Add) to Header in `src/App.jsx`
+- [x] T032 Refactor `useExpenses` hook to expose only necessary actions
+- [x] T033 Verify 100% pass rate for `npm test`
+- [x] T034 Run quickstart manual validation steps
 
 ---
 
