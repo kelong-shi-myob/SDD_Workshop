@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "支出追踪器",
-    "description": "轻松追踪您的支出"
+    "description": "轻松追踪您的支出并控制预算"
   },
   "common": {
     "add": "添加",
@@ -9,13 +9,30 @@
     "delete": "删除",
     "cancel": "取消",
     "save": "保存",
+    "update": "更新",
+    "saving": "保存中...",
     "loading": "加载中...",
     "error": "错误",
     "success": "成功",
     "search": "搜索",
     "filter": "筛选",
     "export": "导出",
-    "noData": "暂无数据"
+    "noData": "暂无数据",
+    "dismiss": "关闭",
+    "confirm": "确认",
+    "yes": "是",
+    "no": "否"
+  },
+  "form": {
+    "amount": "金额",
+    "amountPlaceholder": "输入金额",
+    "date": "日期",
+    "category": "类别",
+    "categoryPlaceholder": "选择类别",
+    "description": "描述",
+    "descriptionPlaceholder": "添加备注（可选）",
+    "optional": "可选",
+    "characters": "字"
   },
   "expense": {
     "title": "支出",
@@ -30,27 +47,45 @@
     "totalExpenses": "总支出",
     "noExpenses": "暂无支出记录"
   },
-  "category": {
+  "categories": {
     "food": "餐饮",
     "transport": "交通",
     "entertainment": "娱乐",
-    "utilities": "水电费",
-    "healthcare": "医疗",
     "shopping": "购物",
-    "other": "其他",
-    "summary": "类别汇总"
+    "bills": "账单",
+    "healthcare": "医疗",
+    "education": "教育",
+    "other": "其他"
   },
   "dashboard": {
     "title": "仪表板",
+    "subtitle": "管理您的支出并按类别跟踪消费",
     "welcome": "欢迎使用支出追踪器",
-    "recent": "最近支出",
-    "categoryBreakdown": "类别明细"
+    "addExpense": "添加支出",
+    "recentExpenses": "最近支出",
+    "categorySummary": "类别汇总",
+    "categoryBreakdown": "类别明细",
+    "noExpenses": "暂无支出记录。点击【添加支出】开始记录。",
+    "noCategoriesYet": "暂无消费数据"
+  },
+  "dialog": {
+    "addExpense": "添加新支出",
+    "editExpense": "编辑支出",
+    "deleteExpense": "删除支出",
+    "deleteConfirm": "确定要删除此支出记录吗？"
   },
   "validation": {
     "required": "此字段必填",
+    "amountRequired": "金额为必填项",
+    "amountPositive": "金额必须大于零",
+    "amountDecimalPlaces": "金额最多保留2位小数",
+    "dateRequired": "日期为必填项",
+    "dateInvalid": "请输入有效日期",
+    "dateFuture": "日期不能是未来时间",
+    "categoryRequired": "类别为必填项",
+    "descriptionTooLong": "描述不能超过500字",
     "invalidAmount": "请输入有效金额",
-    "invalidDate": "请输入有效日期",
-    "amountPositive": "金额必须大于零"
+    "invalidDate": "请输入有效日期"
   },
   "theme": {
     "light": "浅色",
@@ -66,4 +101,3 @@
     "symbol": "¥"
   }
 }
-

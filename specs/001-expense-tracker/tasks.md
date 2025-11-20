@@ -77,24 +77,24 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T029 [P] [US1] Write component test for ExpenseForm validation in `src/components/ExpenseForm/__tests__/ExpenseForm.test.tsx` (test: negative amount shows error, future date shows error, empty required fields show errors)
-- [ ] T030 [P] [US1] Write component test for ExpenseForm submission in `src/components/ExpenseForm/__tests__/ExpenseForm.test.tsx` (test: valid form submits successfully, calls onSubmit with correct data)
-- [ ] T031 [P] [US1] Write integration test for expense creation in `tests/integration/expense-crud.test.tsx` (test: create expense → persists to localStorage → survives page refresh)
+- [x] T029 [P] [US1] Write component test for ExpenseForm validation in `src/components/ExpenseForm/__tests__/ExpenseForm.test.tsx` (test: negative amount shows error, future date shows error, empty required fields show errors)
+- [x] T030 [P] [US1] Write component test for ExpenseForm submission in `src/components/ExpenseForm/__tests__/ExpenseForm.test.tsx` (test: valid form submits successfully, calls onSubmit with correct data)
+- [x] T031 [P] [US1] Write integration test for expense creation in `tests/integration/expense-crud.test.tsx` (test: create expense → persists to localStorage → survives page refresh)
 
 ### Implementation for User Story 1
 
-- [ ] T032 [P] [US1] Create ExpenseForm component skeleton in `src/components/ExpenseForm/ExpenseForm.tsx` (React Hook Form setup with zodResolver)
-- [ ] T033 [US1] Implement amount input field in `src/components/ExpenseForm/ExpenseForm.tsx` (number input with validation error display)
-- [ ] T034 [US1] Implement date input field in `src/components/ExpenseForm/ExpenseForm.tsx` (date picker with max date validation)
-- [ ] T035 [US1] Implement category select field in `src/components/ExpenseForm/ExpenseForm.tsx` (dropdown with 8 categories from FR-004)
-- [ ] T036 [US1] Implement description textarea in `src/components/ExpenseForm/ExpenseForm.tsx` (optional field with 200 char limit)
-- [ ] T037 [US1] Add form submission handler in `src/components/ExpenseForm/ExpenseForm.tsx` (generate id, createdAt, updatedAt, call onSubmit)
-- [ ] T038 [US1] Create ExpenseContext in `src/context/ExpenseContext.tsx` (provider with addExpense, updateExpense, deleteExpense methods)
-- [ ] T039 [US1] Implement addExpense method in `src/context/ExpenseContext.tsx` (validate, save to localStorage, update state, trigger storage event)
-- [ ] T040 [US1] Add error handling in `src/context/ExpenseContext.tsx` (handle QuotaExceededError, show user notification)
-- [ ] T041 [US1] Integrate ExpenseForm into Dashboard in `src/components/Dashboard/Dashboard.tsx` (add "Add Expense" button that opens dialog with form)
-- [ ] T042 [US1] Add form validation error messages in `src/components/ExpenseForm/ExpenseForm.tsx` (display translated error messages from i18n)
-- [ ] T043 [US1] Verify all US1 tests pass and expense creation works end-to-end
+- [x] T032 [P] [US1] Create ExpenseForm component skeleton in `src/components/ExpenseForm/ExpenseForm.tsx` (React Hook Form setup with zodResolver)
+- [x] T033 [US1] Implement amount input field in `src/components/ExpenseForm/ExpenseForm.tsx` (number input with validation error display)
+- [x] T034 [US1] Implement date input field in `src/components/ExpenseForm/ExpenseForm.tsx` (date picker with max date validation)
+- [x] T035 [US1] Implement category select field in `src/components/ExpenseForm/ExpenseForm.tsx` (dropdown with 8 categories from FR-004)
+- [x] T036 [US1] Implement description textarea in `src/components/ExpenseForm/ExpenseForm.tsx` (optional field with 200 char limit)
+- [x] T037 [US1] Add form submission handler in `src/components/ExpenseForm/ExpenseForm.tsx` (generate id, createdAt, updatedAt, call onSubmit)
+- [x] T038 [US1] Create ExpenseContext in `src/context/ExpenseContext.tsx` (provider with addExpense, updateExpense, deleteExpense methods)
+- [x] T039 [US1] Implement addExpense method in `src/context/ExpenseContext.tsx` (validate, save to localStorage, update state, trigger storage event)
+- [x] T040 [US1] Add error handling in `src/context/ExpenseContext.tsx` (handle QuotaExceededError, show user notification)
+- [x] T041 [US1] Integrate ExpenseForm into Dashboard in `src/components/Dashboard/Dashboard.tsx` (add "Add Expense" button that opens dialog with form)
+- [x] T042 [US1] Add form validation error messages in `src/components/ExpenseForm/ExpenseForm.tsx` (display translated error messages from i18n)
+- [x] T043 [US1] Verify all US1 tests pass and expense creation works end-to-end
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 

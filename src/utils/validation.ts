@@ -1,17 +1,16 @@
 /**
  * Validation Utilities
  * 
- * Zod schemas for runtime validation of expense data and form inputs.
- * Used by react-hook-form for client-side validation.
+ * Zod schemas for validating expense form data.
+ * Returns translation keys for error messages (not plain text).
  */
 
 import { z } from 'zod';
-import { EXPENSE_CATEGORIES } from '@/types/expense';
 
 /**
- * Expense category validation schema
+ * Expense categories enum for validation
  */
-export const expenseCategorySchema = z.enum([
+const expenseCategoryEnum = z.enum([
   'Food',
   'Transport',
   'Entertainment',
@@ -23,87 +22,93 @@ export const expenseCategorySchema = z.enum([
 ]);
 
 /**
- * Expense creation validation schema
+ * Expense validation schema
  * 
- * Validates all required fields for creating a new expense:
- * - amount: positive number with max 2 decimal places
- * - date: valid date string (YYYY-MM-DD format)
- * - category: one of the predefined categories
- * - description: optional string (no min length, max 500 chars)
+ * Validates all required fields with proper constraints.
+ * Error messages are translation keys (not plain English).
  */
 export const expenseSchema = z.object({
   amount: z
-    .number({
-      required_error: 'validation.required',
-      invalid_type_error: 'validation.invalidAmount',
-    })
+    .number({ message: 'validation.amountRequired' })
     .positive({ message: 'validation.amountPositive' })
     .refine(
       (val) => {
-        // Check for max 2 decimal places
-        const str = val.toString();
-        const decimalIndex = str.indexOf('.');
-        if (decimalIndex === -1) return true;
-        return str.length - decimalIndex - 1 <= 2;
+        // Check if number has at most 2 decimal places
+        const decimalPlaces = val.toString().split('.')[1]?.length || 0;
+        return decimalPlaces <= 2;
       },
-      { message: 'Amount must have at most 2 decimal places' }
+      { message: 'validation.amountDecimalPlaces' }
     ),
   
   date: z
-    .string({
-      required_error: 'validation.required',
-    })
-    .regex(
-      /^\d{4}-\d{2}-\d{2}$/,
-      { message: 'validation.invalidDate' }
+    .string({ message: 'validation.dateRequired' })
+    .min(1, { message: 'validation.dateRequired' })
+    .refine(
+      (dateStr) => {
+        // Validate date format YYYY-MM-DD
+        const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!dateRegex.test(dateStr)) return false;
+        
+        // Validate it's a real date
+        const date = new Date(dateStr);
+        return date instanceof Date && !isNaN(date.getTime());
+      },
+      { message: 'validation.dateInvalid' }
     )
     .refine(
       (dateStr) => {
-        // Validate that it's a real date
-        const date = new Date(dateStr);
-        return !isNaN(date.getTime());
+        // Ensure date is not in the future
+        const date = new Date(dateStr + 'T00:00:00');
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return date <= today;
       },
-      { message: 'validation.invalidDate' }
+      { message: 'validation.dateFuture' }
     ),
   
-  category: expenseCategorySchema,
+  category: expenseCategoryEnum.refine((val) => val !== undefined, {
+    message: 'validation.categoryRequired',
+  }),
   
   description: z
     .string()
-    .max(500, { message: 'Description must be at most 500 characters' })
+    .max(500, { message: 'validation.descriptionTooLong' })
     .optional()
     .or(z.literal('')),
 });
 
 /**
- * Expense update validation schema
- * All fields optional (partial update support)
+ * Partial update schema (for editing expenses)
+ * All fields are optional, but maintain same validation rules
  */
 export const updateExpenseSchema = expenseSchema.partial();
 
 /**
- * Type inference from Zod schemas
+ * TypeScript type inferred from schema
  */
 export type ExpenseFormData = z.infer<typeof expenseSchema>;
+
+/**
+ * TypeScript type for partial updates
+ */
 export type UpdateExpenseFormData = z.infer<typeof updateExpenseSchema>;
 
 /**
- * Validate expense data
+ * Validate expense data and return result
  * 
- * @param data - The data to validate
- * @returns Validation result with parsed data or errors
+ * @param data - The expense data to validate
+ * @returns Validation result with data or errors
  */
 export function validateExpense(data: unknown) {
   return expenseSchema.safeParse(data);
 }
 
 /**
- * Validate partial expense data (for updates)
+ * Validate partial expense update data
  * 
- * @param data - The data to validate
- * @returns Validation result with parsed data or errors
+ * @param data - The partial expense data to validate
+ * @returns Validation result with data or errors
  */
 export function validateExpenseUpdate(data: unknown) {
   return updateExpenseSchema.safeParse(data);
 }
-

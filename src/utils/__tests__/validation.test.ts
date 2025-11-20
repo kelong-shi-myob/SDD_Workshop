@@ -11,7 +11,6 @@ import {
   updateExpenseSchema,
   validateExpense,
   validateExpenseUpdate,
-  type ExpenseFormData,
 } from '../validation';
 
 describe('Validation Schemas', () => {
