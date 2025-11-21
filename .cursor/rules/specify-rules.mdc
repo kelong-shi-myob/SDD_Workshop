@@ -5,6 +5,8 @@ Auto-generated from all feature plans. Last updated: 2025-11-20
 ## Active Technologies
 - JavaScript (ES6+) / React 18+ + `recharts` (New), `@picocss/pico` (Existing) (004-expense-pie-chart)
 - `localStorage` (Read-only for this feature) (004-expense-pie-chart)
+- JavaScript (ES6+) / React 18+ + `@picocss/pico` (UI), Native React Hooks (State) (005-edit-remove-expense)
+- `localStorage` (Existing persistence layer) (005-edit-remove-expense)
 
 - JavaScript (ES6+) + React 18+ (Functional Components + Hooks), Pico.css (via npm/CDN) (003-expense-tracker)
 
@@ -25,6 +27,7 @@ npm test; npm run lint
 JavaScript (ES6+): Follow standard conventions
 
 ## Recent Changes
+- 005-edit-remove-expense: Added JavaScript (ES6+) / React 18+ + `@picocss/pico` (UI), Native React Hooks (State)
 - 004-expense-pie-chart: Added JavaScript (ES6+) / React 18+ + `recharts` (New), `@picocss/pico` (Existing)
 
 - 003-expense-tracker: Added JavaScript (ES6+) + React 18+ (Functional Components + Hooks), Pico.css (via npm/CDN)

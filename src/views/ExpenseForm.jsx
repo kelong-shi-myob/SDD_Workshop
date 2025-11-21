@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useExpenses } from '../context/ExpenseContext';
 import { CATEGORIES } from '../utils/constants';
 import { generateUUID } from '../utils/uuid';
 
-export default function AddExpense() {
-  const { actions } = useExpenses();
+export default function ExpenseForm() {
+  const { state, actions } = useExpenses();
+  const { viewData, expenses } = state;
+  const isEditMode = !!viewData?.id;
+
   const [formData, setFormData] = useState({
     amount: '',
     date: new Date().toISOString().split('T')[0],
@@ -12,6 +15,20 @@ export default function AddExpense() {
     description: ''
   });
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    if (isEditMode) {
+      const expenseToEdit = expenses.find(e => e.id === viewData.id);
+      if (expenseToEdit) {
+        setFormData({
+          amount: expenseToEdit.amount,
+          date: expenseToEdit.date,
+          category: expenseToEdit.category,
+          description: expenseToEdit.description || ''
+        });
+      }
+    }
+  }, [isEditMode, viewData?.id, expenses]);
 
   const validate = (data) => {
     const newErrors = {};
@@ -36,16 +53,24 @@ export default function AddExpense() {
       return;
     }
 
-    const newExpense = {
-      id: generateUUID(),
-      amount: parseFloat(formData.amount),
-      date: formData.date,
-      category: formData.category,
-      description: formData.description,
-      createdAt: Date.now()
-    };
-
-    actions.addExpense(newExpense);
+    if (isEditMode) {
+      actions.updateExpense(viewData.id, {
+        amount: parseFloat(formData.amount),
+        date: formData.date,
+        category: formData.category,
+        description: formData.description
+      });
+    } else {
+      const newExpense = {
+        id: generateUUID(),
+        amount: parseFloat(formData.amount),
+        date: formData.date,
+        category: formData.category,
+        description: formData.description,
+        createdAt: Date.now()
+      };
+      actions.addExpense(newExpense);
+    }
   };
 
   const handleChange = (e) => {
@@ -54,7 +79,6 @@ export default function AddExpense() {
       ...prev,
       [name]: value
     }));
-    // Clear error when user types
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: null }));
     }
@@ -63,7 +87,7 @@ export default function AddExpense() {
   return (
     <article>
       <header>
-        <strong>Add New Expense</strong>
+        <strong>{isEditMode ? 'Edit Expense' : 'Add New Expense'}</strong>
       </header>
       <form onSubmit={handleSubmit}>
         <label>
@@ -122,7 +146,7 @@ export default function AddExpense() {
           <button type="button" className="secondary" onClick={() => actions.setView('dashboard')}>
             Cancel
           </button>
-          <button type="submit">Save Expense</button>
+          <button type="submit">{isEditMode ? 'Save Changes' : 'Save Expense'}</button>
         </div>
       </form>
     </article>

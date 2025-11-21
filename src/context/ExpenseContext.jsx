@@ -1,43 +1,8 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage.js';
+import { expenseReducer, initialState } from './expenseReducer.js';
 
 const ExpenseContext = createContext(null);
-
-const initialState = {
-  expenses: [],
-  currentView: 'dashboard', // 'dashboard' | 'add-expense'
-  error: null
-};
-
-function expenseReducer(state, action) {
-  switch (action.type) {
-    case 'LOAD_EXPENSES':
-      return {
-        ...state,
-        expenses: action.payload
-      };
-    case 'ADD_EXPENSE':
-      return {
-        ...state,
-        expenses: [action.payload, ...state.expenses], // Add new to start of list
-        currentView: 'dashboard', // Auto-redirect to dashboard
-        error: null
-      };
-    case 'SET_VIEW':
-      return {
-        ...state,
-        currentView: action.payload,
-        error: null
-      };
-    case 'SET_ERROR':
-      return {
-        ...state,
-        error: action.payload
-      };
-    default:
-      return state;
-  }
-}
 
 export function ExpenseProvider({ children }) {
   const [storedExpenses, setStoredExpenses] = useLocalStorage('data', []);
@@ -54,11 +19,24 @@ export function ExpenseProvider({ children }) {
   // Actions
   const loadExpenses = (data) => dispatch({ type: 'LOAD_EXPENSES', payload: data });
   const addExpense = (expense) => dispatch({ type: 'ADD_EXPENSE', payload: expense });
-  const setView = (view) => dispatch({ type: 'SET_VIEW', payload: view });
+  const deleteExpense = (id) => dispatch({ type: 'DELETE_EXPENSE', payload: { id } });
+  const updateExpense = (id, updates) => dispatch({ type: 'UPDATE_EXPENSE', payload: { id, updates } });
+  const setView = (view, data = null) => dispatch({ type: 'SET_VIEW', payload: { view, data } });
   const setError = (error) => dispatch({ type: 'SET_ERROR', payload: error });
 
   return (
-    <ExpenseContext.Provider value={{ state, dispatch, actions: { loadExpenses, addExpense, setView, setError } }}>
+    <ExpenseContext.Provider value={{ 
+      state, 
+      dispatch, 
+      actions: { 
+        loadExpenses, 
+        addExpense, 
+        deleteExpense, 
+        updateExpense, 
+        setView, 
+        setError 
+      } 
+    }}>
       {children}
     </ExpenseContext.Provider>
   );

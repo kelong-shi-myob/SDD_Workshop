@@ -1,5 +1,5 @@
 import { ExpenseProvider, useExpenses } from './context/ExpenseContext';
-import AddExpense from './views/AddExpense';
+import ExpenseForm from './views/ExpenseForm';
 import Dashboard from './views/Dashboard';
 
 function ExpenseApp() {
@@ -39,7 +39,7 @@ function ExpenseApp() {
       </header>
       <main className="container">
         {currentView === 'dashboard' && <Dashboard />}
-        {currentView === 'add-expense' && <AddExpense />}
+        {(currentView === 'add-expense' || currentView === 'edit-expense') && <ExpenseForm />}
       </main>
     </>
   );
