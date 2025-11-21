@@ -2,7 +2,9 @@ import { useMemo } from 'react';
 import { useExpenses } from '../context/ExpenseContext';
 import ExpenseList from '../components/ExpenseList';
 import CategorySummary from '../components/CategorySummary';
+import { ExpensePieChart } from '../components/ExpensePieChart';
 import { calculateCategoryTotals } from '../utils/calculations';
+import { aggregateExpensesByCategory } from '../utils/expenseUtils';
 
 export default function Dashboard() {
   const { state, actions } = useExpenses();
@@ -25,6 +27,10 @@ export default function Dashboard() {
     return calculateCategoryTotals(expenses);
   }, [expenses]);
 
+  const pieChartData = useMemo(() => {
+    return aggregateExpensesByCategory(expenses);
+  }, [expenses]);
+
   return (
     <>
       <div className="grid" style={{ marginBottom: '2rem' }}>
@@ -38,7 +44,10 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="grid">
+      {/* Pie Chart Section - Prominently at the top */}
+      <ExpensePieChart data={pieChartData} />
+
+      <div className="grid" style={{ marginTop: '2rem' }}>
         <div>
           <article>
             <header>
@@ -54,4 +63,3 @@ export default function Dashboard() {
     </>
   );
 }
-
